@@ -11,7 +11,7 @@
         @endif
 
         <{{ $modelJSName }}-form
-            :action="'{{'{{'}} url('admin/{{ $resource }}') }}'"
+            :action="'{{'{{'}} url('{{ $resource }}') }}'"
 @if($hasTranslatable)
             :locales="@{{ json_encode($locales) }}"
             :send-empty-locales="false"

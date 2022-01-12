@@ -90,7 +90,7 @@ class {{ $modelBaseName }} extends Model
 
     public function getResourceUrlAttribute()
     {
-        return url('/admin/{{$resource}}/'.$this->getKey());
+        return url('/{{$resource}}/'.$this->getKey());
     }
 @if (count($relations))
 

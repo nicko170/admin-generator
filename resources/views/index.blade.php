@@ -6,7 +6,7 @@
 
     <{{ $modelJSName }}-listing
         :data="{{'{{'}} $data->toJson() }}"
-        :url="'{{'{{'}} url('admin/{{ $resource }}') }}'"
+        :url="'{{'{{'}} url('{{ $resource }}') }}'"
 @if($containsPublishedAtColumn)
         :trans="{{'{{'}} json_encode(trans('brackets/admin-ui::admin.dialogs')) }}"
 @endif
@@ -18,9 +18,9 @@
                     <div class="card-header">
                         <i class="fa fa-align-justify"></i> {{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.index') }}
 @if($export)
-                        <a class="btn btn-primary btn-sm pull-right m-b-0 ml-2" href="{{'{{'}} url('admin/{{ $resource }}/export') }}" role="button"><i class="fa fa-file-excel-o"></i>&nbsp; {{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.export') }}</a>
+                        <a class="btn btn-primary btn-sm pull-right m-b-0 ml-2" href="{{'{{'}} url('{{ $resource }}/export') }}" role="button"><i class="fa fa-file-excel-o"></i>&nbsp; {{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.export') }}</a>
 @endif
-                        <a class="btn btn-primary btn-spinner btn-sm pull-right m-b-0" href="{{'{{'}} url('admin/{{ $resource }}/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.create') }}</a>
+                        <a class="btn btn-primary btn-spinner btn-sm pull-right m-b-0" href="{{'{{'}} url('{{ $resource }}/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.create') }}</a>
                     </div>
                     <div class="card-body" v-cloak>
                         <div class="card-block">
@@ -164,7 +164,7 @@
                                 <i class="icon-magnifier"></i>
                                 <h3>@{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>
                                 <p>@{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>
-                                <a class="btn btn-primary btn-spinner" href="{{'{{'}} url('admin/{{ $resource }}/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.create') }}</a>
+                                <a class="btn btn-primary btn-spinner" href="{{'{{'}} url('{{ $resource }}/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.create') }}</a>
                             </div>
                         </div>
                     </div>
